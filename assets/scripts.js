@@ -55,7 +55,7 @@ function pegarDados() {
 function gerarCopia() {
     var texto = null;
     var dados = pegarDados();
-    texto='Objetivo da sessão: '+dados[0]+'\n\nMaterial utilizado: '+dados[1]+'\n\nEvolução: Paciente chegou em '+dados[5]+'.'+dados[3]+'\n\nÁgua: '+dados[6][0]+'\nLanche: '+dados[6][1]+'\nBanheiro: '+dados[6][2]+'\nFralda: '+dados[6][3]+'\n\nÁrea de atuação: Psicologia (ABA)\nNome do Profissional : '+dados[2]+'\n(CRP '+dados[4]+')';
+    texto='Objetivo da sessão: '+dados[0]+'\n\nMaterial utilizado: '+dados[1]+'\n\nEvolução: Paciente chegou '+dados[5]+'. '+dados[3]+'\n\nÁgua: '+dados[6][0]+'\nLanche: '+dados[6][1]+'\nBanheiro: '+dados[6][2]+'\nFralda: '+dados[6][3]+'\n\nÁrea de atuação: Psicologia (ABA)\nNome do Profissional : '+dados[2]+'\n(CRP '+dados[4]+')';
     navigator.clipboard.writeText(texto);
 
 }
