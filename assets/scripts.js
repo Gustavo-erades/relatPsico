@@ -25,6 +25,9 @@ function pegarDados() {
     }else if(profissional=='amanda'){
         profissional="Amanda De Carli Farias Cruz";
         profissionalCod='0128109';
+    }else if(profissional=='amanda'){
+        profissional="Amanda De Carli Farias Cruz";
+        profissionalCod='0128487';
     }
     profissionalCod=profissionalCod.replace(/(\d{2})(\d*)/, '$1/$2');
     const pacienteChegou = document.getElementById('pacienteChegou');
@@ -68,22 +71,27 @@ function aguardarCamposPreenchidos() {
     }
 }
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-
-    // salva preferência
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
+function updateThemeIcon(isDark) {
+    const icon = document.querySelector("#theme-icon");
+    if (icon) {
+        icon.innerText = isDark ? "☀️" : "🌙";
     }
 }
 
-// manter modo ao recarregar
+function toggleDarkMode() {
+    const isDark = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateThemeIcon(isDark);
+}
+
+// Manter modo ao recarregar
 window.onload = function () {
     const theme = localStorage.getItem("theme");
     if (theme === "dark") {
         document.body.classList.add("dark-mode");
+        updateThemeIcon(true);
+    } else {
+        updateThemeIcon(false);
     }
 };
 

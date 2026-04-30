@@ -17,13 +17,13 @@
 <body>
 
     <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <div class="d-flex justify-content-end mb-3">
-            <button class="btn btn-outline-secondary btn-sm" onclick="toggleDarkMode()">
-                🌙 Modo escuro
-            </button>
-        </div>
+      
         <div class="clinic-card w-100">
-
+            <div >
+                <button class="btn-theme" onclick="toggleDarkMode()" id="theme-toggle">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
             <!-- Objetivo -->
             <div class="form-floating mb-3">
                 <textarea class="form-control" id="objSession"></textarea>
@@ -75,14 +75,13 @@
             </div>
 
             <!-- Supervisor -->
-            <div class="form-floating mb-3">
-                <select class="form-select" id="profissional">
-                    <option>Pedro Henrique Andrade de Sousa</option>
-                    <option>Samara Teles de Nogueira</option>
-                    <option>Amanda De Carli Farias Cruz</option>
-                </select>
-                <label>Nome do supervisor</label>
-            </div>
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="profissional">
+                        <option selected>Davi Carrasco Abrão</option>
+                    </select>
+                    <label for="profissional" id="nomeSup">Nome do supervisor</label>
+                </div>
+     
 
             <!-- Botões -->
             <div class="text-center mt-3">
