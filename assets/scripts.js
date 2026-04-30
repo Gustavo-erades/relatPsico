@@ -68,5 +68,24 @@ function aguardarCamposPreenchidos() {
     }
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    // salva preferência
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// manter modo ao recarregar
+window.onload = function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+};
+
 aguardarCamposPreenchidos();
 
