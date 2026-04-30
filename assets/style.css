@@ -73,3 +73,62 @@ footer {
     font-size: 0.8rem;
     color: #aaa;
 }
+
+/* ===== MODO ESCURO ===== */
+body.dark-mode {
+    background-color: #1e1f26;
+    color: #e4e6eb;
+}
+
+body.dark-mode .clinic-card,
+body.dark-mode .container {
+    background-color: transparent;
+}
+
+body.dark-mode h3 {
+    color: #ffffff;
+}
+
+body.dark-mode label {
+    color: #b0b3b8;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #2a2b33;
+    color: #e4e6eb;
+    border: 1px solid #3a3b45;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #aaa;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.15rem rgba(74, 144, 226, 0.25);
+}
+
+body.dark-mode .btn-outline-primary,
+body.dark-mode .btn-outline-success,
+body.dark-mode .btn-outline-danger,
+body.dark-mode .btn-outline-warning,
+body.dark-mode .btn-outline-light {
+    color: #e4e6eb;
+    border-color: #555;
+}
+
+body.dark-mode .btn-outline-primary:hover,
+body.dark-mode .btn-outline-success:hover {
+    background-color: #4a90e2;
+    color: white;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #4a90e2;
+}
+
+body.dark-mode footer {
+    color: #888;
+}
