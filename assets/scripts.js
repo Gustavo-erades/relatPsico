@@ -28,12 +28,15 @@ function pegarDados() {
     }else if(profissional=='amanda'){
         profissional="Amanda De Carli Farias Cruz";
         profissionalCod='0128487';
+    }else if(profissional=='Davi Carrasco Abrão'){
+        profissional="Davi Carrasco Abrão";
+        profissionalCod='0128487';
     }
+
     profissionalCod=profissionalCod.replace(/(\d{2})(\d*)/, '$1/$2');
     const pacienteChegou = document.getElementById('pacienteChegou');
-    let valorPacienteChegou = '';
-    const selectedRadio = pacienteChegou.querySelector('input[name="btnradio"]:checked');
-    valorPacienteChegou = selectedRadio.value;
+    const selectedRadio = pacienteChegou.querySelector('input[name="estado"]:checked');
+    let valorPacienteChegou = selectedRadio ? selectedRadio.value : '';
     var evolucao = document.querySelector("#evolucao").value;
     const divSessao=document.getElementById('divSessao');
     var sessao=divSessao.querySelectorAll('input[type="checkbox"]:checked');
@@ -55,13 +58,7 @@ function pegarDados() {
     retornoDados = [objSession, material, profissional, evolucao, profissionalCod, valorPacienteChegou, selectedValues];
     return retornoDados;
 }
-function gerarCopia() {
-    var texto = null;
-    var dados = pegarDados();
-    texto='Objetivo da sessão: '+dados[0]+'\n\nMaterial utilizado: '+dados[1]+'\n\nEvolução: Paciente chegou'+' '+dados[5]+'. '+dados[3]+'\n\nÁgua: '+dados[6][0]+'\nLanche: '+dados[6][1]+'\nBanheiro: '+dados[6][2]+'\nFralda: '+dados[6][3]+'\n\nÁrea de atuação: Psicologia (ABA)\nNome do Profissional : '+dados[2]+'\n(CRP '+dados[4]+')';
-    navigator.clipboard.writeText(texto);
 
-}
 function aguardarCamposPreenchidos() {
     if (todosOsCamposPreenchidos()) {
         let botao = document.querySelector("#divButton");
@@ -76,12 +73,6 @@ function updateThemeIcon(isDark) {
     if (icon) {
         icon.innerText = isDark ? "☀️" : "🌙";
     }
-}
-
-function toggleDarkMode() {
-    const isDark = document.body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    updateThemeIcon(isDark);
 }
 
 // Manter modo ao recarregar
